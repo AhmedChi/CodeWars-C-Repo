@@ -4,32 +4,31 @@ using System.Text;
 
 namespace ConsoleApp
 {
-    class ProblemQ1 : StringMethods
+    public class ProblemQ1
     {
-        StringMethods myStringMethodds = new StringMethods();
+        private readonly IStringMethods _stringMethods;
 
-        myStringMethodds.
+        public ProblemQ1(IStringMethods myStringMethods)
+        {
+            _stringMethods = myStringMethods;
+        }
 
-        string phrase = "The quick brown fox jumps over the lazy dog.";
-            
-        string GreaterThan5(string phrase)
+        public void GreaterThan5(string phrase)
         {
             string[] words = phrase.Split(' ');
 
             foreach (var word in words)
-            {
+            { 
                 if (word.Length >= 5)
                 {
-                    string reversedWord = Reverse(word);
-                    return reversedWord;
+                    string reversedWord = _stringMethods.Reverse(word);
+                    Console.WriteLine($"{reversedWord}");
                 }
                 else
                 {
-                    return word;
+                    Console.WriteLine($"{word}");
                 }
             }
-
-            return word;
         }
 
         
