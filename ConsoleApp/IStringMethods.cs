@@ -4,8 +4,8 @@ using System.Text;
 
 namespace ConsoleApp
 {
-    interface IStringMethods
+    public interface IStringMethods
     {
-        string Reverse(string word);
+        public string Reverse(string word);
     }
 }

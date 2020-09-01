@@ -4,9 +4,9 @@ using System.Text;
 
 namespace ConsoleApp
 {
-    class StringMethods : IStringMethods
+    public class StringMethods : IStringMethods
     {
-        string IStringMethods.Reverse(string word)
+        public string Reverse(string word)
         {
             char[] charatarArray = word.ToCharArray();
             Array.Reverse(charatarArray);
